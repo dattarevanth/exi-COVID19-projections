@@ -1,5 +1,8 @@
 # exi-COVID19-projections
 
+NOTE: PREDICTING MORE THAN THE TOP 8 MOST POPULOUS COUNTIES WITH THE CURRENT EXECUTABLE WILL NOT WORK DUE TO MISSINGNESS IN API DATA.
+WE WILL UPDATE A NEW EXECUTABLE UNDER A NEW BRANCH TO PRESERVE CONTEST INTEGRITY AND STILL ALLOW RESEARCHERS AND PUBLIC HEALTH OFFICIALS TO UTILZE OUR WORK.
+
 This is a GBM model leveraging c3.ai's expansive data lake. We achieve 2% error on LA county with an error less than 10% for the top 5 most populous counties in the US. This is better than current CDC top models. In the leaderboard below. Our model will be validated by them soon.
 
 https://github.com/youyanggu/covid19-forecast-hub-evaluation
