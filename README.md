@@ -3,23 +3,65 @@
 
 
                              Location  ...  (MAE/average real value y)*100
-LosAngeles_California_UnitedStates  ...  1.2609956961239168% error
+0       LosAngeles_California_UnitedStates  ...  1.2503106002193303% error
 
-Cook_Illinois_UnitedStates  ...   3.653759919553285% error
+1               Cook_Illinois_UnitedStates  ...   3.653761533826847% error
 
-Harris_Texas_UnitedStates  ...   2.017228131952422% error
+2                Harris_Texas_UnitedStates  ...  2.0172355480118855% error
 
-Maricopa_Arizona_UnitedStates  ...  2.7888707738790384% error
+3            Maricopa_Arizona_UnitedStates  ...   2.788871509987053% error
 
-SanDiego_California_UnitedStates  ...  2.1263462703364753% error
+4         SanDiego_California_UnitedStates  ...  2.1263464366001408% error
 
-Orange_California_UnitedStates  ...  1.3033774391246662% error
+5           Orange_California_UnitedStates  ...  1.3033752839631478% error
 
-Miami-Dade_Florida_UnitedStates  ...  2.9555846619835684% error
+6          Miami-Dade_Florida_UnitedStates  ...    3.35174910187414% error
 
-Dallas_Texas_UnitedStates  ...   5.824786330299069% error
+7                Dallas_Texas_UnitedStates  ...   5.654946957710884% error
 
-Riverside_California_UnitedStates  ...  1.9223331068181557% error
+8        Riverside_California_UnitedStates  ...  1.8975864662258999% error
+
+9                Clark_Nevada_UnitedStates  ...  0.7812851055136633% error
+
+10             Queens_NewYork_UnitedStates  ...  3.8542194965159418% error
+
+11            King_Washington_UnitedStates  ...   4.509753041294729% error
+
+12   SanBernardino_California_UnitedStates  ...  3.1768895456913158% error
+
+13              Tarrant_Texas_UnitedStates  ...   3.878228981285789% error
+
+14                Bexar_Texas_UnitedStates  ...  1.3534693257748194% error
+
+15            Broward_Florida_UnitedStates  ...  1.8980612342215466% error
+
+16      SantaClara_California_UnitedStates  ...  1.5479287962608839% error
+
+17             Wayne_Michigan_UnitedStates  ...   6.366410044000325% error
+
+18         Alameda_California_UnitedStates  ...  1.5512122743609074% error
+
+19            NewYork_NewYork_UnitedStates  ...   5.364641596804042% error
+
+20    Middlesex_Massachusetts_UnitedStates  ...   4.506548326601432% error
+
+21  Philadelphia_Pennsylvania_UnitedStates  ...   3.898557489958246% error
+
+22      Sacramento_California_UnitedStates  ...   2.054471279347801% error
+
+23          PalmBeach_Florida_UnitedStates  ...  1.4126520369796451% error
+
+24            Suffolk_NewYork_UnitedStates  ...   4.643070381751109% error
+
+25       Hillsborough_Florida_UnitedStates  ...  1.2085644873942214% error
+
+26              Bronx_NewYork_UnitedStates  ...   5.492446675698457% error
+
+27             Orange_Florida_UnitedStates  ...  1.9754856050119662% error
+
+28             Nassau_NewYork_UnitedStates  ...  3.9251102369755277% error
+
+29              Franklin_Ohio_UnitedStates  ...   3.818895647951647% error
 
 
 
