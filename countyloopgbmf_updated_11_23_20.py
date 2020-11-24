@@ -26,7 +26,7 @@ proj=int(proj)
 projlb=proj-5
 for name in [proj,projlb]:
 	name=str(name)
-print(f"Projecting the the average new cases per day '{projlb}' - '{proj}' days in the future for the top '{n}' most populated US counties.")
+print(f"Projecting the total new cases until '{proj}' days in the future for the top '{n}' most populated US counties.")
 answer2=input('Are you ready? Y/N:')
 if str(answer2)== 'Y' or 'y':
 	print('Prepare for a quantum leap. Please do not interrupt me.')
@@ -120,7 +120,7 @@ test=pd.DataFrame()
 traincombo=pd.DataFrame()
 testcombo=pd.DataFrame()
 loopcount=0
-results=pd.DataFrame(columns=['Location', 'Mean Absolute Error',f"Mean Absolute Prediction: % new cases per day for day '{projlb}' - day '{proj}'" , '(MAE/MAP)*100'],
+results=pd.DataFrame(columns=['Location', 'Mean Absolute Error',f"Mean Absolute Prediction: % new population infected from now till day '{proj}'" , '(MAE/y)*100'],
                      index=list(range(0,n,1)))
 today = pd.Timestamp.now().strftime("%Y-%m-%d")
 
