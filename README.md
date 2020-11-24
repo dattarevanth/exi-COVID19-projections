@@ -3,15 +3,23 @@
 
 
                              Location  ...  (MAE/average real value y)*100
-0  LosAngeles_California_UnitedStates  ...  1.2609956961239168% error
-1          Cook_Illinois_UnitedStates  ...   3.653759919553285% error
-2           Harris_Texas_UnitedStates  ...   2.017228131952422% error
-3       Maricopa_Arizona_UnitedStates  ...  2.7888707738790384% error
-4    SanDiego_California_UnitedStates  ...  2.1263462703364753% error
-5      Orange_California_UnitedStates  ...  1.3033774391246662% error
-6     Miami-Dade_Florida_UnitedStates  ...  2.9555846619835684% error
-7           Dallas_Texas_UnitedStates  ...   5.824786330299069% error
-8   Riverside_California_UnitedStates  ...  1.9223331068181557% error
+LosAngeles_California_UnitedStates  ...  1.2609956961239168% error
+
+Cook_Illinois_UnitedStates  ...   3.653759919553285% error
+
+Harris_Texas_UnitedStates  ...   2.017228131952422% error
+
+Maricopa_Arizona_UnitedStates  ...  2.7888707738790384% error
+
+SanDiego_California_UnitedStates  ...  2.1263462703364753% error
+
+Orange_California_UnitedStates  ...  1.3033774391246662% error
+
+Miami-Dade_Florida_UnitedStates  ...  2.9555846619835684% error
+
+Dallas_Texas_UnitedStates  ...   5.824786330299069% error
+
+Riverside_California_UnitedStates  ...  1.9223331068181557% error
 
 
 
