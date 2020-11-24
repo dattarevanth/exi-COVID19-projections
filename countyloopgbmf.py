@@ -61,6 +61,7 @@ countypops=dfp[[dfp.columns[-1],dfp.columns[-5]]]
 countypops=countypops.copy()
 countypops.sort_values(by='value',ascending=False,inplace=True)
 countypops.reset_index(inplace=True,drop=True)
+countypops.drop(8, inplace=True, axis=0)
 l_o_c=countypops.iloc[0:n,0].tolist()
 print('toppers')
 #
@@ -122,6 +123,7 @@ loopcount=0
 results=pd.DataFrame(columns=['Location', 'Mean Absolute Error',f"Mean Absolute Prediction: % new cases per day for day '{projlb}' - day '{proj}'" , '(MAE/MAP)*100'],
                      index=list(range(0,n,1)))
 today = pd.Timestamp.now().strftime("%Y-%m-%d")
+
 for i in l_o_c:
 	#data pull
 	loi=i
@@ -187,10 +189,14 @@ for i in l_o_c:
 	#model prep
 	df['ncd_pn']=df['ncd_pn'].astype(np.float64)
 	df['ncd_pn_tma']=bn.move_mean(df['ncd_pn'], window=5)
-	df['ncd_pn_tma_f'+str(proj)]=df['ncd_pn_tma'].shift(proj)
-	df=df[df['ncd_pn_tma_f'+str(proj)].notnull()]
-	df['ncd_pn_tma_f'+str(proj)]=df['ncd_pn_tma_f'+str(proj)].astype(np.float64)
+	#df['ncd_pn_tma_f'+str(proj)]=df['ncd_pn_tma'].shift(proj)
+	#df=df[df['ncd_pn_tma_f'+str(proj)].notnull()]
+	#df['ncd_pn_tma_f'+str(proj)]=df['ncd_pn_tma_f'+str(proj)].astype(np.float64)
 	#normalize to us pop 300mil
+	#cum cases outcome
+	df['cumcases'+str(proj)]=((df[loi+'.JHU_ConfirmedCases.data'].shift(-proj))-df[loi+'.JHU_ConfirmedCases.data'])/pop
+	df=df[df['cumcases'+str(proj)].notnull()]
+	df['cumcases'+str(proj)]=df['cumcases'+str(proj)].astype(np.float64)
 	df['popn']=(pop/npop)*100
 	#df['popoldn']=oldpop/pop
 	#rr, aces
@@ -211,6 +217,8 @@ for i in l_o_c:
 			df['ace_pn'+str(i)+'^2']=rolling.beta
 			df['ace_pn'+str(i)+'^2']=df['ace_pn'+str(i)+'^2'].astype(float)
 			print(i)
+		for i in [5,15,30]:
+			df=df[df['ace_pn'+str(i)+'^2'].notnull()]
 	##################CODE TO CALL INTENT SCORE###################    
 	state_loi = loi.split('_')[-2]
 	for i in intent_by_state.columns.tolist():
@@ -249,7 +257,7 @@ for i in l_o_c:
 	dftr = h2o.H2OFrame(train)
 	dfte = h2o.H2OFrame(test)
 	gbm=H2OGradientBoostingEstimator()
-	gbm.train(x=predictorsm, y=response, training_frame=dftr)
+	gbm.train(x=predictorsm, y='cumcases'+str(proj), training_frame=dftr)
 	perf = gbm.model_performance(dfte)
 	results.iloc[loopcount,1]=abs(test[response]).mean()
 	results.iloc[loopcount,2]=perf.mae()
