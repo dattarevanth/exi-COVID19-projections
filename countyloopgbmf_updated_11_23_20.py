@@ -240,7 +240,7 @@ for i in l_o_c:
 	if loopcount==0:
 		predictorsm=df.columns.tolist()
 		for i in list(range(1,len(predictorsm),1)):
-			if predictorsm[i]=='ncd_pn_tma_f'+str(proj):
+			if predictorsm[i]=='cumcases'+str(proj):
 				respid=i
 				response=predictorsm[respid]
 				print(loopcount)
