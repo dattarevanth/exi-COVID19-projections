@@ -1,5 +1,6 @@
 # exi-COVID19-projections
 11/23/20 update: Model now predicts total new cases over next 28 days (user specified) rather than a 5 day window in the future. This change enhances utility and should have been implemented in the first place. The error with being unable to predict Kings County New York has been confirmed as due to missing data in the c3.ai API. The training loop will now succesfully iterate over the user specified number of counties beyond 8. Accuracy is also observably improved due to correcting an error in the code which had the model predicting in the past not future and due to the larger scale of the prediction. To save time in the loop we calculate MAE/average of the target prediction y (total new cases over next 28 days) and report a rough approximation of percent error. Due to the relatively low standard deviation, this approximation is reasonably close to actual percent error calculated for individual predictions.
+12/7/20: a few days ago we validated this approximation of percent error for LA county, calculating percent error for each prediction and averaging them. Error was ~2%. Code will be updated to report this value soon.
 
 
                              Location  ...  (MAE/average real value y)*100
