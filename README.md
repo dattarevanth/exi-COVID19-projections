@@ -1,8 +1,9 @@
 # exi-COVID19-projections
-11/23/20 update: Model now predicts total new cases over next 28 days (user specified) rather than a 5 day window in the future. This change enhances utility and should have been implemented in the first place. The error with being unable to predict Kings County New York has been confirmed as due to missing data in the c3.ai API. The training loop will now succesfully iterate over the user specified number of counties beyond 8. Accuracy is also observably improved due to correcting an error in the code which had the model making an interpolating predicting in the past and not extrapolating to the future. Expanding the prediction window also improves accuracy by reducing noise. To save time in the loop we calculate MAE/average of the target prediction y (total new cases over next 28 days) and report a rough approximation of percent error. Due to the relatively low standard deviation, this approximation is reasonably close to actual percent error calculated for individual predictions.
+This is a GBM model leveraging c3.ai's expansive data lake. We achieve <2% error on LA county with an error less than 10% for the top 5 most populous counties in the US. This is better than current CDC top national/state models in the leaderboard below. In fact, these models don't even predict at a county level which is where public health interventions can be applied most rapidly and surgically. 
 
-12/7/20: a few days ago we validated this approximation of percent error for LA county, calculating percent error for each prediction and averaging them. Error was ~2%. Code will be updated to report this value soon.
+https://github.com/youyanggu/covid19-forecast-hub-evaluation
 
+Here are the latest models' results with percent error for predictions made on unseen test data. The percent error value reported describes average error of daily predictions made on unseen test data, predicting cumulative new cases for the next 28 days.
 
                              Location  ...  (MAE/average real value y)*100
 0       LosAngeles_California_UnitedStates  ...  1.2503106002193303% error
@@ -65,31 +66,4 @@
 
 29              Franklin_Ohio_UnitedStates  ...   3.818895647951647% error
 
-OLD#BELOW###########################################################################################################################
 
-
-
-NOTE: PREDICTING MORE THAN THE TOP 8 MOST POPULOUS COUNTIES WITH THE CURRENT EXECUTABLE WILL NOT WORK DUE TO MISSINGNESS IN API DATA.
-WE WILL UPDATE A NEW EXECUTABLE UNDER A NEW BRANCH TO PRESERVE CONTEST INTEGRITY AND STILL ALLOW RESEARCHERS AND PUBLIC HEALTH OFFICIALS TO UTILZE OUR WORK.
-
-This is a GBM model leveraging c3.ai's expansive data lake. We achieve 2% error on LA county with an error less than 10% for the top 5 most populous counties in the US. This is better than current CDC top national/state models in the leaderboard below. In fact, these models don't even predict at a county level which is where public health interventions can be applied most rapidly and surgically. 
-
-https://github.com/youyanggu/covid19-forecast-hub-evaluation
-
-In the meantime, here are our results:
-
-LosAngeles_California_UnitedStates  ...2.198157163298805% error
-
-Cook_Illinois_UnitedStates          ...1.4643759588576224% error
-
-Harris_Texas_UnitedStates           ...8.109221562925217% error
-
-Maricopa_Arizona_UnitedStates       ...4.42502011514675% error
-
-SanDiego_California_UnitedStates    ...2.7067607178570268% error
-
-Orange_California_UnitedStates      ...3.863724116648829% error
-
-Miami-Dade_Florida_UnitedStates     ...5.443478609018028% error
-
-Dallas_Texas_UnitedStates           ...7.1840531839591355% error
