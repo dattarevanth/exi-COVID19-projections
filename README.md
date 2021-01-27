@@ -5,7 +5,7 @@ https://github.com/youyanggu/covid19-forecast-hub-evaluation
 
 Here are the latest models' results with percent error for predictions made on unseen test data. The percent error value reported describes average error of daily predictions made on unseen test data, predicting cumulative new cases for the next 28 days.
 
-.          Location........................................ Percent Error
+         Location.......................................................... Percent Error
 
 0       LosAngeles_California_UnitedStates  ...  1.2503106002193303% error
 
